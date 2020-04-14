@@ -1,0 +1,37 @@
+class bankaccount:     
+    def __init__(self, ballance, revenue, expenditure):
+        self.ballance = ballance
+        self.revenue = revenue
+        self.expenditure = expenditure
+    
+    def deposit(self):
+        z = float(input("Wie viel möchten Sie einzahlen? "))
+        self.revenue.append(z)
+        self.ballance += z
+        print("Ihr neuer Kontostand ist: " + str(self.ballance))
+
+    def withdraw(self):
+        z = float(input("Wie viel möchten Sie abheben? "))
+        self.expenditure.append(z)
+        self.ballance -= z
+        print("Ihr neuer Kontostand ist: " + str(self.ballance))
+
+ba1 = bankaccount(0, [], [])
+
+
+
+while True:
+        x= int(input("was möchten Sie tun? \n1 Kontostand anzeigen\n 2 Geld einzahlen\n 3 Geld abheben\n 4 Einnahmen anzeigen\n 5 Ausgaben anzeigen\n"))
+        
+        if x == 1:
+            print(ba1.ballance)
+        elif x == 2:
+            ba1.deposit()
+        elif x == 3:
+            ba1.withdraw()
+        elif x == 4:
+            print(ba1.revenue)
+        elif x == 5:
+            print(ba1.expenditure)
+        else:
+            print("Ungültige Eingabe")
